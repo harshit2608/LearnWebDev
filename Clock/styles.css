@@ -1,0 +1,48 @@
+:root {
+    --color-primary-black-light: rgb(24, 24, 24);
+    --color-primary-white: rgb(209, 209, 209);
+    --color-primary-greyish: rgb(40, 40, 40);
+}
+
+body,
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3vw;
+    color: var(--color-primary-white);
+    box-sizing: border-box;
+}
+
+.flip-clock,
+.text-header,
+.card,
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    height: 100vh;
+    align-items: center;
+    background: radial-gradient(
+        var(--color-primary-greyish),
+        var(--color-primary-black-light)
+    );
+}
+
+.flip-clock div {
+    padding: 0rem 1rem;
+}
+
+.card {
+    width: 14vw;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    background-color: var(--color-primary-black-light);
+    box-shadow: 0px 0px 36px var(--color-primary-black-light);
+}
+
+.card p {
+    font-size: 12vw;
+}

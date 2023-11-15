@@ -1,0 +1,136 @@
+:root {
+    --color-primary: rgb(163, 149, 164);
+    --color-primary-light: rgb(193, 183, 198);
+    --color-primary-extra-light: rgb(208, 198, 213);
+    --color-white: rgb(238, 231, 241);
+    --color-black: #1b181f;
+}
+
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: var(--color-black);
+    height: 100vh;
+    width: auto;
+    position: relative;
+}
+
+.planet {
+    width: 25em;
+    height: 25em;
+    border-radius: 50%;
+    position: absolute;
+    background: linear-gradient(#313247 0%, var(--color-black) 50%);
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.planet:before {
+    content: "";
+    background: linear-gradient(#ffd1da 0%, #ff849d 5%, #2d2133 25%);
+    height: 25rem;
+    width: 25rem;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 47%;
+    z-index: -99;
+    transform: translate(-50%, -50%);
+    -webkit-filter: blur(1em);
+}
+
+.planet:after {
+    content: "";
+    background: linear-gradient(#ffd1da 0%, #ff849d 5%, #2d2133 25%);
+    height: 25rem;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    z-index: -99;
+    transform: translate(-50%, -50%);
+    width: 26em;
+    top: 44%;
+    -webkit-filter: blur(2em);
+    opacity: 0.3;
+}
+
+.company {
+    color: var(--color-white);
+    font-family: "Courier New", Courier, monospace;
+
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+}
+
+.msg {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    letter-spacing: 1em;
+    color: var(--color-white);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notify-msg {
+    color: #62414c;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.form {
+    position: absolute;
+    left: 50%;
+    top: 82%;
+    transform: translate(-50%, -50%);
+}
+
+.form-input {
+    border: none;
+    outline: none;
+    height: 2em;
+    width: 30em;
+    border-radius: 10em;
+    background-color: #121113;
+
+    font-size: 1em;
+    color: var(--color-white);
+    padding-left: 1em;
+    letter-spacing: 0.1em;
+}
+
+.form-button {
+    border: none;
+    outline: none;
+    height: 2em;
+    width: 10em;
+    border-radius: 10em;
+    background-color: #2e2b3f;
+
+    font-size: 1em;
+    color: var(--color-white);
+    padding-left: 1em;
+    text-align: center;
+    letter-spacing: 0.1em;
+    position: relative;
+    left: -10%;
+    z-index: 99;
+}
