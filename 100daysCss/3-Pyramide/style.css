@@ -72,7 +72,9 @@ body,
     box-shadow: 0 0 1rem 0.2rem var(--color-sun);
     animation: sun-goes-down 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
 }
-.sun::after {
+
+/* CODE FOR DEBUGGIN ORIGIN */
+/* .sun::after {
     z-index: 100;
     position: absolute;
     top: 100%;
@@ -83,7 +85,7 @@ body,
     background-color: #f0f;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 .pyramid-left,
 .pyramid-right {
