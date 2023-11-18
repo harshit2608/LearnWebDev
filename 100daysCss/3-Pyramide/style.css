@@ -1,0 +1,208 @@
+/* FIXME: NEED TO WORK ON ANIMATIONS OF SUN AND SHADOW */
+
+:root {
+    --color-primary: #272c34;
+    --color-sky: #7ddffc;
+    --color-sand: #f0de75;
+    --color-sun: #ffef00;
+    --color-pyramid: #f4f4f4;
+    --color-pyramid-switch: #dddada;
+    --color-primary-shadow: rgba(0, 0, 0, 0.2);
+}
+
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", "Courier", sans-serif;
+}
+
+.frame {
+    width: 25rem;
+    height: 25rem;
+    box-shadow: 0.25rem 0.5rem 1rem 0 var(--color-primary-shadow);
+    border-radius: 0.3rem;
+    background-color: var(--color-primary);
+}
+
+.container,
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 12.5rem;
+    height: 12.5rem;
+    animation: fading-sand 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.sky {
+    position: relative;
+    width: 12.5rem;
+    height: 8.5rem;
+    background: var(--color-sky);
+    animation: fading-sky 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.sand {
+    position: absolute;
+    width: 12.5rem;
+    height: 5rem;
+    background: var(--color-sand);
+    animation: fading-sand 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.sun {
+    z-index: 2;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--color-sun);
+    width: 2rem;
+    height: 2rem;
+    top: 1rem;
+    left: 1rem;
+    transform-origin: 50% 700%;
+    box-shadow: 0 0 1rem 0.2rem var(--color-sun);
+    animation: sun-goes-down 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+.sun::after {
+    z-index: 100;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    content: "";
+    background-color: #f0f;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pyramid-left,
+.pyramid-right {
+    top: 3.825rem;
+    left: 1.25rem;
+    position: absolute;
+    height: 5rem;
+    width: 7.25rem;
+}
+
+.pyramid-left {
+    background: var(--color-pyramid);
+    clip-path: polygon(0 100%, 55% 0, 100% 100%);
+    animation: pyramid-day-to-night 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.pyramid-right {
+    left: 5rem;
+    background: var(--color-pyramid-switch);
+    clip-path: polygon(3% 0, 90% 100%, 30% 100%);
+    animation: pyramid-day-to-night 4s cubic-bezier(0.4, 0, 0.49, 1) reverse
+        infinite;
+}
+
+.shadow {
+    z-index: 10;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 15rem;
+    height: 3rem;
+    left: 1.5rem;
+    animation: shadow-effect 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+@keyframes sun-goes-down {
+    0% {
+        background: var(--color-primary);
+        box-shadow: 0 0 0 0 var(--color-primary);
+        transform: rotate(-20deg);
+    }
+    30% {
+        background: var(--color-sun);
+        box-shadow: 0 0 1rem 0.2rem var(--color-sun);
+        transform: rotate(8deg);
+    }
+    70% {
+        background: var(--color-sun);
+        box-shadow: 0 0 1rem 0.2rem var(--color-sun);
+        transform: rotate(78deg);
+    }
+    100% {
+        background: var(--color-primary);
+        box-shadow: 0 0 0 0 var(--color-primary);
+        transform: rotate(128deg);
+    }
+}
+
+@keyframes fading-sand {
+    0% {
+        background: var(--color-primary);
+    }
+    30% {
+        background: var(--color-sand);
+    }
+    70% {
+        background: var(--color-sand);
+    }
+    100% {
+        background: var(--color-primary);
+    }
+}
+
+@keyframes fading-sky {
+    0% {
+        background: var(--color-primary);
+    }
+    30% {
+        background: var(--color-sky);
+    }
+    70% {
+        background: var(--color-sky);
+    }
+    100% {
+        background: var(--color-primary);
+    }
+}
+
+@keyframes shadow-effect {
+    0% {
+        opacity: 0;
+        clip-path: polygon(0 0rem, 9.6rem 0rem, 15rem 2rem);
+    }
+    30% {
+        opacity: 1;
+        clip-path: polygon(0 0rem, 9.6rem 0rem, 10rem 2rem);
+    }
+    55% {
+    }
+    75% {
+        clip-path: polygon(0 0rem, 9.6rem 0rem, -5rem 1rem);
+    }
+    100% {
+        opacity: 0;
+        clip-path: polygon(0 0rem, 9.6rem 0rem, 15rem 2rem);
+    }
+}
+
+@keyframes pyramid-day-to-night {
+    0% {
+        background: var(--color-primary);
+    }
+    30% {
+        background: var(--color-pyramid);
+    }
+
+    70% {
+        background: var(--color-pyramid-switch);
+    }
+    100% {
+        background: var(--color-primary);
+    }
+}

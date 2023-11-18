@@ -38,9 +38,7 @@ body,
     height: var(--menu-icon-height);
 }
 
-.menu-icon .line-one,
-.menu-icon .line-two,
-.menu-icon .line-three {
+.menu-icon .line {
     position: absolute;
     background-color: var(--color-primary-white);
     height: var(--line-height);
