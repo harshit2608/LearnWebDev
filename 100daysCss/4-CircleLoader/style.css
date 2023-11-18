@@ -1,0 +1,103 @@
+:root {
+    --color-primary-shadow: rgba(0, 0, 0, 0.2);
+    --color-primary-shadow-dark: rgba(0, 0, 0, 0.3);
+    --color-primary: #e56262;
+    --color-white: #ffffff;
+}
+
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", "Courier", sans-serif;
+}
+
+.frame {
+    width: 25rem;
+    height: 25rem;
+    box-shadow: 0.25rem 0.5rem 1rem 0 var(--color-primary-shadow);
+    border-radius: 0.3rem;
+}
+
+.container,
+.frame {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: var(--color-primary);
+}
+
+.container {
+    width: 9rem;
+    height: 9rem;
+}
+
+.circle {
+    position: absolute;
+    background: var(--color-white);
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+}
+
+.circle-one {
+    z-index: 1;
+    animation: circle-jump-1 2s both alternate infinite;
+}
+.circle-two {
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+    width: 6rem;
+    height: 6rem;
+    animation: circle-jump-2 2s both alternate infinite;
+}
+.circle-three {
+    top: 3rem;
+    left: 3rem;
+    z-index: 3;
+    width: 3rem;
+    height: 3rem;
+    animation: circle-jump-3 2s both alternate infinite;
+}
+
+@keyframes circle-jump-1 {
+    0%,
+    10% {
+        transform: scale(0);
+        box-shadow: 0.125rem 0.125rem 0.2rem 0.125rem
+            var(--color-primary-shadow);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0.6rem 0.6rem 1rem 0rem var(--color-primary-shadow-dark);
+    }
+}
+
+@keyframes circle-jump-2 {
+    0%,
+    40% {
+        transform: scale(0);
+        box-shadow: 0.125rem 0.125rem 0.2rem 0.125rem
+            var(--color-primary-shadow);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0.6rem 0.6rem 1rem 0rem var(--color-primary-shadow-dark);
+    }
+}
+
+@keyframes circle-jump-3 {
+    0%,
+    70% {
+        transform: scale(0);
+        box-shadow: 0.125rem 0.125rem 0.2rem 0.125rem
+            var(--color-primary-shadow);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0.6rem 0.6rem 1rem 0rem var(--color-primary-shadow-dark);
+    }
+}
